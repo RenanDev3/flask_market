@@ -1,0 +1,26 @@
+1) using Anaconda to manage the environments
+
+2) to star the server
+set FLASK_APP=market.py
+set FLASK_DEBUG=1
+flask run
+
+3) dynamic route example
+@app.route('/about/<username>')
+def about_page(username):
+    return f'<h1>About page of {username}</h1>'
+
+4) Jinja Template: web template engine that will be used
+to manage variables in the website by URLs
+Sintax example:
+
+>market.py
+@app.route('/market')
+def market_page():
+return render_template('market.html', item_name='Phone')
+
+>market.html
+<p>{{ item_name }}</p>
+
+> {{ variable values }}
+> {% code to be processed %}
