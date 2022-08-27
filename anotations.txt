@@ -24,3 +24,12 @@ return render_template('market.html', item_name='Phone')
 
 > {{ variable values }}
 > {% code to be processed %}
+
+5) a smarter way to make routes
+if you set
+<a href="\home">Home</a>
+the url will look for the Route "\home" in market.py
+
+BUT if you set using Jinja like that
+<a href="{{ url_for('home_page') }}">Home</a>
+That will make a search for the function home_page in market.py
