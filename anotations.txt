@@ -33,3 +33,38 @@ the url will look for the Route "\home" in market.py
 BUT if you set using Jinja like that
 <a href="{{ url_for('home_page') }}">Home</a>
 That will make a search for the function home_page in market.py
+
+6) to create the models and database
+a) set database as it is in market.py
+b) in the CLI:
+    >python
+    >from market import db
+    >db.create_all()
+
+That will create the database file
+
+7) how to add data into tables of database using CLI
+>>> from market import Item
+>>> item1 = Item()
+>>> item1 = Item(name="IPhone 10", price=500, barcode="123456789123", description="desc")
+>>> db.session.add(item1)
+>>> db.session.commit()
+
+>>>Item.query.all() # to see if that worked
+
+8) iterate in CLI
+for item in Item.query.all():
+    item.id
+    item.name
+    item.price
+    item.barcode
+    item.description
+
+9) query with filter
+>Item.query.filter_by(price=500)
+>return the mempry address
+
+to print the data
+>for item in Item.query.filter_by(price=500):
+    item.name
+    item.price
