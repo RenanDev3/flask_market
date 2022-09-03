@@ -68,3 +68,6 @@ to print the data
 >for item in Item.query.filter_by(price=500):
     item.name
     item.price
+
+10) Avoid circular imports using packages
+the __init__.py file makes the directory be recognized as a package
